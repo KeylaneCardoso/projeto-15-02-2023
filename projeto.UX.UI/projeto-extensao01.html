@@ -8,26 +8,26 @@
     <link rel="stylesheet" type="text/css" href="estilo.css/estilo-projeto-extensao01.css">
 </head>
 <body>
-    <header class="cabecalho">
-        <a class="cabecalho-menu" href="a">menu</a>
-        <a class="cabecalho-menu" href="a">assine</a>
+    <header id="topo" class="cabecalho">
+        <a class="cabecalho-menu" href="#">Menu</a>
+        <a class="cabecalho-menu" href="#">Assine</a>
         <img class="cabecalho-img" src= "imagens/logo-dt2.png" alt="Logo do diário tiradentes: um jornal com as letras D e T e um globo terrestre no canto superior direito."/>
-        <a class="cabecalho-menu" href="a">entrar</a>
-        <a class="cabecalho-menu" href="a">buscar</a>
+        <a class="cabecalho-menu" href="#">Entrar</a>
+        <a class="cabecalho-menu" href="#">Buscar</a>
         
     </header>
     
     <main class="conteudo">
         <nav class="conteudo-menu">
-            <a class="conteudo-menu-item" href="a">pagina inicial</a>
-            <a class="conteudo-menu-item" href="a">mundo</a>
-            <a class="conteudo-menu-item" href="a">podcasts</a>
-            <a class="conteudo-menu-item" href="a">cultura</a>
-            <a class="conteudo-menu-item" href="a">esportes</a>
-            <a class="conteudo-menu-item" href="a">educação</a>
-            <a class="conteudo-menu-item" href="a">saúde</a>
-            <a class="conteudo-menu-item" href="a">economia</a>
-            <a class="conteudo-menu-item" href="a">cotidiano</a>
+            <a class="conteudo-menu-item" href="#">Página inicial</a>
+            <a class="conteudo-menu-item" href="#mundo">Mundo</a>
+            <a class="conteudo-menu-item" href="#podcast">Podcasts</a>
+            <a class="conteudo-menu-item" href="#cultura">Cultura</a>
+            <a class="conteudo-menu-item" href="#esportes">Esportes</a>
+            <a class="conteudo-menu-item" href="#educacao">Educação</a>
+            <a class="conteudo-menu-item" href="#saude">Saúde</a>
+            <a class="conteudo-menu-item" href="#economia">Economia</a>
+            <a class="conteudo-menu-item" href="#cotidiano">Cotidiano</a>
         </nav>
         
         <p class="conteudo-venda">Assine agora por R$ 00,00</p>
@@ -126,8 +126,8 @@
             </div>
         </section>
 
-        <section class="conteudo-04">
-            <div class="conteudo-mundo">
+        <section  class="conteudo-04">
+            <div id="mundo" class="conteudo-mundo">
                 <h2>Mundo</h2>
 
                 <div class="conteudo-m">
@@ -145,7 +145,7 @@
                 <button class="botao" style="margin: 5px 30px;">Ver mais</button>    
             </div>
 
-            <div class="conteudo-podcast">
+            <div id="podcast" class="conteudo-podcast">
                 <h2>Podcast</h2>
                 <div class="conteudo-p">
                     <div class="conteudo-pod">
@@ -163,7 +163,7 @@
         </section>
 
         <section class="conteudo-05">
-            <div class="conteudo-temas">
+            <div id="cultura" class="conteudo-temas">
 
                 <h2 class="titulo-temas">Cultura</h2>
                 <div class="conteudo-ex">
@@ -181,7 +181,7 @@
                 <button class="botao">Ver mais</button>  
             </div>
             
-            <div class="conteudo-temas">
+            <div id="esportes" class="conteudo-temas">
                 <h2 class="titulo-temas">Esportes</h2>
                 <div class="conteudo-ex">
                     
@@ -199,7 +199,7 @@
             </div>
 
             
-            <div class="conteudo-temas">
+            <div id="educacao" class="conteudo-temas">
                 <h2 class="titulo-temas">Educação</h2>
                 <div class="conteudo-ex">
                     
@@ -217,7 +217,7 @@
             </div>
 
             
-            <div class="conteudo-temas">
+            <div id="saude" class="conteudo-temas">
                 <h2 class="titulo-temas">Saúde</h2>
                 <div class="conteudo-ex">
                     
@@ -235,7 +235,7 @@
             </div>
 
             
-            <div class="conteudo-temas">
+            <div id="economia" class="conteudo-temas">
                 <h2 class="titulo-temas">Economia</h2>
                 <div class="conteudo-ex">
                     
@@ -253,7 +253,7 @@
             </div>
 
             
-            <div class="conteudo-temas">
+            <div id="cotidiano" class="conteudo-temas">
                 <h2 class="titulo-temas">Cotidiano</h2>
                 <div class="conteudo-ex">
                     
@@ -272,10 +272,11 @@
         </section>
 
         <div class="voltar-topo">
-            <a href="a" style="color:black;">Voltar ao topo
+            <a id="subirPagina" href="#topo" style="color:black;">Voltar ao topo
                 <img src="imagens/seta.png">
             </a>
         </div>
+        <div class="clear"></div>
 
     </main>
 
@@ -336,5 +337,19 @@
             
     </footer>    
     
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var link = $(".conteudo-menu a");
+            link.on("click", function(){
+                var seletor = $(this).attr("href");
+                var posicao = $(seletor).offset().top;
+                $("html, body").animate({scrollTop: posicao-35}, 1500);
+            })
+        })
+    </script>
 </body>
 </html>

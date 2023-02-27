@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    max-width: 1366px;
 }
 
  body {
@@ -311,8 +312,12 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
     padding-bottom: 5px;
+    float: right;
+    clear: both;
 }
-
+.clear{
+    clear: both;
+}
 .voltar-topo img {
     width: 10px;
     margin-left: 8px;
